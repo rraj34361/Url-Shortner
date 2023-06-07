@@ -84,5 +84,15 @@ Considering scenarios where a famous person with a large following posts a link 
   "data": {
     // Response data
   }
+}
   ```
+### Error Response Structure
+```yaml
+{
+  "status": false,
+  "message": "Error message description"
+}
+
+  ```
+
 This concludes the documentation for the Scalable URL Shortener Project.

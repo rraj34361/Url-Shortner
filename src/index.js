@@ -5,13 +5,13 @@ const routes = require('./routes/route')
 const app = express()
 const port = 3000
 
-
+//  for accessing enviornment variables
 dotenv.config()
 
 
 app.use(express.json())
 
-
+/* This code is establishing a connection with a MongoDB database using Mongoose. */
 mongoose.connect("", {
     useNewUrlparser : true
 })

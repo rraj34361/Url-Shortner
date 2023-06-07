@@ -24,8 +24,7 @@ const urlSchema = new mongoose.Schema({
     },
 },{timestamps :true})
 
-/* `module.exports` is a special object in Node.js that is used to define the public interface of a
-module. In this case, it is exporting a Mongoose model named `Url` that is based on the `urlSchema`
+/* `exporting a Mongoose model named `Url` that is based on the `urlSchema`
 schema. This allows other parts of the application to use the `Url` model to interact with the
 MongoDB database. */
 

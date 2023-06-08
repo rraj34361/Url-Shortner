@@ -12,7 +12,7 @@ dotenv.config()
 app.use(express.json())
 
 /* This code is establishing a connection with a MongoDB database using Mongoose. */
-mongoose.connect(process.env.String, {
+mongoose.connect(process.env.password, {
     useNewUrlparser : true
 })
 .then(()=>{

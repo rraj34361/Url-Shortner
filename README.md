@@ -7,11 +7,6 @@
 #### Overview
 The Scalable URL Shortener Project aims to create a URL shortening service that generates shortened aliases for long URLs. These shortened aliases, known as "short links," are used to redirect users to the original URL. URL shortening is beneficial for saving space, reducing errors when typing long URLs, and tracking individual links. This project will focus on implementing the backend functionality of the URL shortener service.
 
-#### Key Points
-- Create a dedicated group database named `groupXDatabase` to store the URL data.
-- Each group should use a single Git branch following the naming convention `project/urlShortnerGroupX` for better coordination and version control.
-- Adhere to the provided naming conventions to ensure successful integration with the front-end application.
-
 #### Models
 - Url Model:
   - `urlCode` (mandatory, unique, lowercase, trim): A unique code representing the shortened URL.

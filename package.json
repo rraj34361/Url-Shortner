@@ -1,20 +1,25 @@
 {
   "name": "url_shortner-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generating short url for a long url using express and mongodb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "mongoose": "^7.2.2",
-    "redis": "^4.6.7",
+    "redis": "^3.1.2",
     "shortid": "^2.2.16",
     "util": "^0.12.5",
     "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

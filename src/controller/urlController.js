@@ -60,4 +60,38 @@ const createShortUrl = async function (req, res) {
   }
 };
 
-module.exports = { createShortUrl };
+//  redirecting the user with the help of short-Url
+
+const getUrl = async function(req,res){
+  try{
+      
+      let code = req.params.urlCode.toLowerCase()
+      if(!code) {
+          return res.status(400).send({status :false, message: "Must send complete Url"})
+      }
+      if(!shortid.isValid(code)){
+          return res.status(400).send({status :false, message: "Not a valid ShortId"})
+      }
+      
+    
+      let cahcedUrl = await GET_ASYNC(code)
+      console.log(cahcedUrl)
+      if(cahcedUrl) {
+          console.log("cache hit")
+          return   res.status(302).redirect(cahcedUrl)
+      }
+      
+      let data = await urlModel.findOne({urlCode:code})   
+      if(!data){
+          return res.status(404).send({status :false, message: "url code not exists"})                     
+      }else{
+          console.log("cache miss")
+          await SET_ASYNC(data.urlCode, data.longUrl, 'EX', 3600*24) 
+          return res.status(302).redirect(data.longUrl);
+      }
+  }catch(error){
+      return res.status(500).send({status : false,message: error.message})
+  }
+}
+
+module.exports = { createShortUrl, getUrl };

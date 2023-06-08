@@ -1,12 +1,13 @@
 const redis = require("redis");
 const { promisify } = require("util");
-
+require('dotenv').config()
+const {Host, RedisPort, RedisPassword} = process.env
 //1. Connect to the redis server
 
 const redisClient = redis.createClient({
-    host: 'redis-16476.c212.ap-south-1-1.ec2.cloud.redislabs.com',
-    port: 16476,
-    password: 'lW4mvHKbk3LHvaX3u5LxICpwGtVawdI1',
+    host: Host,
+    port: RedisPort,
+    password: RedisPassword,
   });
   
 redisClient.on("connect", async function () {
@@ -23,3 +24,6 @@ const GET_ASYNC = promisify(redisClient.GET).bind(redisClient);
 
 
 module.exports = {SET_ASYNC,GET_ASYNC}
+
+
+

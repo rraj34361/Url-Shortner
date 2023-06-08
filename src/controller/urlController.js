@@ -27,7 +27,7 @@ const createShortUrl = async function (req, res) {
     }
     longUrl = longUrl.toLowerCase();
 
-    //3. Start using the redis commad
+    //3. Start using the redis command
 
     let check = await urlModel
       .findOne({ longUrl: longUrl })
